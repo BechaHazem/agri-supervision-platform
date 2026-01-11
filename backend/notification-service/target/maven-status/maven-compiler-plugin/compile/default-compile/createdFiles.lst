@@ -1,0 +1,4 @@
+com\agrisupervision\notification\kafka\AlertEvent.class
+com\agrisupervision\notification\NotificationServiceApplication.class
+com\agrisupervision\notification\kafka\AlertListener.class
+com\agrisupervision\notification\kafka\KafkaConsumerConfig.class
