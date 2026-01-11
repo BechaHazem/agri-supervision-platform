@@ -1,0 +1,4 @@
+# Central shared configuration for services.
+# Add per-service files like:
+# - <service-name>.yml
+# - <service-name>-dev.yml
