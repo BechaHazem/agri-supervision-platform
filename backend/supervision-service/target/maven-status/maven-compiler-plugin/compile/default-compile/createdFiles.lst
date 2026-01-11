@@ -1,0 +1,14 @@
+com\agrisupervision\supervision\client\ExploitationsClient.class
+com\agrisupervision\supervision\repository\DonneeCapteurRepository.class
+com\agrisupervision\supervision\web\DonneeCapteurController.class
+com\agrisupervision\supervision\domain\DonneeMeteo.class
+com\agrisupervision\supervision\SupervisionServiceApplication.class
+com\agrisupervision\supervision\repository\DonneeMeteoRepository.class
+com\agrisupervision\supervision\kafka\AlertProducer.class
+com\agrisupervision\supervision\kafka\KafkaProducerConfig.class
+com\agrisupervision\supervision\service\SupervisionService.class
+com\agrisupervision\supervision\web\DonneeMeteoController.class
+com\agrisupervision\supervision\kafka\AlertEvent.class
+com\agrisupervision\supervision\client\ParcelleDto.class
+com\agrisupervision\supervision\domain\DonneeCapteur.class
+com\agrisupervision\supervision\service\ResourceNotFoundException.class

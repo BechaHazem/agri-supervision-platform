@@ -1,0 +1,14 @@
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\client\ExploitationsClient.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\client\ParcelleDto.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\domain\DonneeCapteur.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\domain\DonneeMeteo.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\kafka\AlertEvent.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\kafka\AlertProducer.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\kafka\KafkaProducerConfig.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\repository\DonneeCapteurRepository.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\repository\DonneeMeteoRepository.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\service\ResourceNotFoundException.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\service\SupervisionService.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\SupervisionServiceApplication.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\web\DonneeCapteurController.java
+D:\OneDrive - Talys Consulting\Documents\2 INFO 5\agri-supervision-platform\backend\supervision-service\src\main\java\com\agrisupervision\supervision\web\DonneeMeteoController.java
