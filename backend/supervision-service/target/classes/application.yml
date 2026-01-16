@@ -1,10 +1,44 @@
+server:
+  port: 8082
+
 spring:
   application:
     name: supervision-service
-  config:
-    import: "optional:configserver:http://localhost:8888"
+  datasource:
+    url: jdbc:h2:mem:supervisiondb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+  cloud:
+    config:
+      enabled: false
+supervision:
+  alerts:
+    topic: alerts-topic
+  thresholds:
+    sensor: 100
+    temperature-max: 45
+    humidite-max: 95
+    pluviometrie-max: 200
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/

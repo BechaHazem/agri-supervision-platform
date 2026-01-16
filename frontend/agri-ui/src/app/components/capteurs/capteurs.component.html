@@ -1,1 +1,93 @@
-<p>capteurs works!</p>
+<div class="d-flex align-items-center justify-content-between mb-3">
+	<div>
+		<h2 class="h4 mb-0">Capteurs</h2>
+		<!-- <div class="text-secondary small">Créer une valeur &gt; 100 déclenche une alerte (Kafka)</div> -->
+	</div>
+	<div class="d-flex gap-2">
+		<button class="btn btn-outline-secondary" type="button" (click)="load()" [disabled]="isLoading">Rafraîchir</button>
+		<button class="btn btn-primary" type="button" (click)="startCreate()" [disabled]="isLoading">Nouvelle donnée</button>
+	</div>
+</div>
+
+<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+<div class="row g-3">
+	<div class="col-12 col-lg-7">
+		<div class="card">
+			<div class="card-header d-flex align-items-center justify-content-between">
+				<span>Liste</span>
+				<span class="badge text-bg-secondary">{{ items.length }}</span>
+			</div>
+			<div class="card-body p-0">
+				<div *ngIf="isLoading" class="p-3 text-secondary">Chargement…</div>
+				<div *ngIf="!isLoading && items.length === 0" class="p-3 text-secondary">Aucune donnée capteur.</div>
+
+				<div *ngIf="items.length > 0" class="table-responsive">
+					<table class="table table-striped table-hover mb-0 align-middle">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Parcelle</th>
+								<th>Type</th>
+								<th class="text-end">Valeur</th>
+								<th>Date</th>
+								<th class="text-end">Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let d of items">
+								<td class="text-secondary">{{ d.id ?? '—' }}</td>
+								<td>{{ d.parcelleId }}</td>
+								<td>{{ d.type }}</td>
+								<td class="text-end">{{ d.valeur }}</td>
+								<td class="text-secondary">{{ d.date || '—' }}</td>
+								<td class="text-end">
+									<div class="btn-group btn-group-sm" role="group">
+										<button class="btn btn-outline-secondary" type="button" (click)="startEdit(d)" [disabled]="isLoading || !d.id">Éditer</button>
+										<button class="btn btn-outline-danger" type="button" (click)="remove(d)" [disabled]="isLoading || !d.id">Supprimer</button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-12 col-lg-5">
+		<div class="card">
+			<div class="card-header">{{ editingId ? 'Modifier' : 'Créer' }}</div>
+			<div class="card-body">
+				<form [formGroup]="form" (ngSubmit)="submit()">
+					<div class="mb-3">
+						<label class="form-label">Parcelle ID *</label>
+						<input class="form-control" type="number" formControlName="parcelleId" />
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label">Type *</label>
+						<input class="form-control" formControlName="type" placeholder="Ex: HUMIDITE_SOL" />
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label">Valeur *</label>
+						<input class="form-control" type="number" formControlName="valeur" />
+						<!-- <div class="text-secondary small mt-1">
+							<a href="#" (click)="$event.preventDefault(); quickAnomaly()">Mettre une valeur anormale</a>
+						</div> -->
+					</div>
+
+					<div class="d-flex gap-2">
+						<button class="btn btn-primary" type="submit" [disabled]="isLoading">{{ editingId ? 'Enregistrer' : 'Créer' }}</button>
+						<button class="btn btn-outline-secondary" type="button" (click)="cancel()" [disabled]="isLoading">Annuler</button>
+					</div>
+
+					<!-- <div class="text-secondary small mt-3">
+						Endpoint: <code>/api/supervision/capteurs</code>
+					</div> -->
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

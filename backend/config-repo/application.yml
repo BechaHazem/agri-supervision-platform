@@ -2,3 +2,7 @@
 # Add per-service files like:
 # - <service-name>.yml
 # - <service-name>-dev.yml
+
+eureka:
+	instance:
+		prefer-ip-address: true

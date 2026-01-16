@@ -1,10 +1,51 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: gateway-service
-  config:
-    import: "optional:configserver:http://localhost:8888"
+
+  cloud:
+    config:
+      enabled: false
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+      routes:
+        - id: exploitations-service
+          uri: lb://exploitations-service
+          predicates:
+            - Path=/api/exploitations/**,/api/parcelles/**
+        - id: supervision-service
+          uri: lb://supervision-service
+          predicates:
+            - Path=/api/supervision/**
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/api/notifications/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - http://localhost:4200
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+# Optional but often needed by browsers when using credentials.
+# If you don't use cookies/auth, you can set allowCredentials: false.
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/

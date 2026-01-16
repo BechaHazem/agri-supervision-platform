@@ -1,1 +1,16 @@
-<p>alerts works!</p>
+<div class="mb-3">
+	<h2 class="h4 mb-1">Alertes</h2>
+	<div class="text-secondary small">Les alertes sont envoyées via Kafka et consommées par notification-service (logs console).</div>
+</div>
+
+<div class="card">
+	<div class="card-body">
+		<ol class="mb-0">
+			<li>Démarrer Kafka + les microservices (discovery, config, gateway, exploitations, supervision, notification).</li>
+			<li>Créer une parcelle (via Exploitations → Parcelles) et récupérer son ID.</li>
+			<li>Aller sur <a routerLink="/capteurs">Capteurs</a> et créer une donnée avec <code>valeur &gt; 100</code>.</li>
+			<li>Ou aller sur <a routerLink="/meteo">Météo</a> et créer une donnée avec <code>temperature &gt; 45</code> (ou humidité/pluie au-dessus des seuils).</li>
+			<li>Observer la consommation de l'alerte dans les logs de <strong>notification-service</strong>.</li>
+		</ol>
+	</div>
+</div>

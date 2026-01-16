@@ -1,13 +1,11 @@
 package com.agrisupervision.notification.kafka;
 
-import java.time.Instant;
-
 public class AlertEvent {
 
     private String kind;
     private Long parcelleId;
     private String message;
-    private Instant timestamp;
+    private String timestamp;
 
     public String getKind() {
         return kind;
@@ -33,11 +31,11 @@ public class AlertEvent {
         this.message = message;
     }
 
-    public Instant getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Instant timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 }

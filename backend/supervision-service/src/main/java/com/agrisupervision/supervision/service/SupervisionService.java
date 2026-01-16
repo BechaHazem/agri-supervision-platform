@@ -132,7 +132,7 @@ public class SupervisionService {
         String message = "Sensor anomaly: type=" + donnee.getType() + ", valeur=" + donnee.getValeur()
                 + " (threshold=" + sensorThreshold + ")" + parcelleInfo;
 
-        alertProducer.publish(new AlertEvent("SENSOR", donnee.getParcelleId(), message, Instant.now()));
+        alertProducer.publish(new AlertEvent("SENSOR", donnee.getParcelleId(), message, Instant.now().toString()));
     }
 
     private void detectAndAlert(DonneeMeteo donnee) {
@@ -159,7 +159,7 @@ public class SupervisionService {
         String parcelleInfo = tryGetParcelleInfo(donnee.getParcelleId());
         String message = "Weather anomaly:" + details + parcelleInfo;
 
-        alertProducer.publish(new AlertEvent("WEATHER", donnee.getParcelleId(), message, Instant.now()));
+        alertProducer.publish(new AlertEvent("WEATHER", donnee.getParcelleId(), message, Instant.now().toString()));
     }
 
     private String tryGetParcelleInfo(Long parcelleId) {
